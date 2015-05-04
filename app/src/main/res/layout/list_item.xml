@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  the UI for the items in the wearable list
+   Each Item consists of an image (in this case just a circle)
+   and some text next to the circle.
+   Notice this is a custom view specified in the WearableListItemLayout class
+ -->
+
+
+<todaysmenu.pondar.org.todaysmenu.WearableListItemLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_gravity="center_horizontal"
+    android:layout_width="wrap_content"
+    android:layout_marginLeft="40dp"
+    android:layout_height="match_parent">
+    <ImageView
+        android:id="@+id/circle"
+        android:layout_height="20dp"
+        android:layout_margin="16dp"
+        android:layout_width="20dp"
+        android:src="@drawable/circle"/>
+    <TextView
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:layout_marginRight="10dp"
+        android:layout_height="match_parent"
+        android:fontFamily="sans-serif-condensed-light"
+        android:lineSpacingExtra="-2sp"
+        android:textColor="@color/black"
+        android:textSize="16sp"/>
+</todaysmenu.pondar.org.todaysmenu.WearableListItemLayout>

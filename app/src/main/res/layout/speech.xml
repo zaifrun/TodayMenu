@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+ <!-- This is the layout file for the speech segment, where you can
+ add new choices to the menu. It just has two button and a TextView
+ for showing the result from speech recognition.
+  -->
+
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android" 
+        xmlns:app="http://schemas.android.com/apk/res-auto"  
+        android:id="@+id/speechframe"
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+        app:layout_box="left|bottom|right">
+
+    	<LinearLayout 
+    	    android:layout_height="wrap_content"
+        	 android:layout_width="wrap_content"
+        	 android:layout_gravity="center"
+        	 android:orientation="vertical"
+        	 android:id="@+id/speechlayout">
+        	
+        <Button
+    	     android:id="@+id/speechButton"
+    	 	 android:layout_height="wrap_content"
+        	 android:layout_width="wrap_content" 
+        	 android:layout_gravity="center"
+        	 android:gravity="center_horizontal"
+        	 android:textColor="@color/white"
+        	 android:text="@string/inputNewItem"  
+    	    />
+    		 
+    	<TextView 
+    	     android:id="@+id/speechText"
+    	 	 android:layout_height="wrap_content"
+        	 android:layout_width="wrap_content" 
+        	 android:gravity="center_horizontal"
+        	 android:textSize="20sp"
+        	 android:layout_gravity="center_horizontal"
+        	 android:textColor="@color/blue"
+        	 android:text="@string/speechInput"  
+    	    />
+    	<Button
+    	     android:id="@+id/addItemButton"
+    	 	 android:layout_height="wrap_content"
+        	 android:layout_width="wrap_content" 
+        	 android:layout_gravity="center"
+        	 android:gravity="center_horizontal"
+        	 android:textColor="@color/white"
+        	 android:text="@string/addNewItem"  
+    	    />
+    	
+    	</LinearLayout>
+  
+   </FrameLayout>

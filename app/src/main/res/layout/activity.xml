@@ -1,0 +1,28 @@
+
+<!-- we use the BoxInsetLayout to support both round and square displays with the same xml file.
+The alternative to this is to use the watchviewstub, where you can then specify different xml
+ for round and square. Both those views must be in root of your layout for things to work.-->
+<android.support.wearable.view.BoxInsetLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_height="match_parent"
+    android:layout_width="match_parent">
+
+    <!-- This is the gridviewpager, it makes sure we can swipe between different views -->
+   <android.support.wearable.view.GridViewPager
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/pager"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" />
+
+    <!-- This is the DotsPageIndicator, it makes sure we can use the small
+    dots on the bottom of the screen to indicate the current page of the app is displayed -->
+
+    <android.support.wearable.view.DotsPageIndicator
+        android:id="@+id/page_indicator"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal|bottom">
+    </android.support.wearable.view.DotsPageIndicator>
+   
+   </android.support.wearable.view.BoxInsetLayout>
+  

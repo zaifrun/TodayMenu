@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Today\'s Menu</string>
+       
+    <string name="saved">Saved</string>
+    <string name="statistics">Statistics</string>
+    <string name="inputNewItem">Input new item</string>
+    <string name="addNewItem">Save new item</string>
+    <string name="statsDeleted">Stats Reset</string>
+    <string name="resetStats">Reset Stats</string>
+    <string name="speechInput">Speech Input:</string>
+    <string name="resetChoices">Reset Choices</string>
+    <string name="choicesDeleted">Choices Reset</string>
+    <string name="choiceAdded">Choice Added</string>
+
+</resources>
