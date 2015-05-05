@@ -36,9 +36,26 @@ public class ClearFragment extends Fragment implements OnClickListener {
 
 	@Override
 	public void onClick(View v) {
-		if (v.getId()==R.id.clearDataButton)
-            //clear all stats data
-			clearData();
+		if (v.getId()==R.id.clearDataButton) {
+			//clear all stats data
+			MyDialogFragment dialog = new MyDialogFragment() {
+				@Override
+				protected void positiveClick() {
+					super.positiveClick();
+					clearData();
+				}
+
+				@Override
+				protected void negativeClick() {
+					super.negativeClick();
+				}
+			};
+			Bundle bundle = new Bundle();
+			bundle.putString("title","Delete Stats");
+			bundle.putString("message","Sure?");
+			dialog.setArguments(bundle);
+			dialog.show(this.getFragmentManager(),"test");
+		}
 		else if (v.getId()==R.id.clearChoicesButton)
             //reset choices to the default ones
 			clearChoices();
