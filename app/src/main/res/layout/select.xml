@@ -8,7 +8,7 @@ So basically there is just a wearablelistview
         xmlns:android="http://schemas.android.com/apk/res/android" 
         xmlns:app="http://schemas.android.com/apk/res-auto"  
         android:id="@+id/frame_layout"
-        android:background="@drawable/eaaa_logo"
+        android:background="@drawable/background"
         android:layout_height="match_parent"
         android:layout_width="match_parent"
         app:layout_box="left|bottom|right">

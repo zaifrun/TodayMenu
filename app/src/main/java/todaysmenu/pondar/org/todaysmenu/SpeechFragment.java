@@ -1,8 +1,6 @@
 
 package todaysmenu.pondar.org.todaysmenu;
 
-import java.util.List;
-
 import android.app.Activity;
 import android.app.Fragment;
 import android.content.Intent;
@@ -15,6 +13,8 @@ import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+
+import java.util.List;
 
 
 

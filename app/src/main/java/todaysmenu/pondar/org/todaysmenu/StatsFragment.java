@@ -1,9 +1,6 @@
 
 package todaysmenu.pondar.org.todaysmenu;
 
-import java.util.ArrayList;
-import java.util.Collections;
-
 import android.app.Fragment;
 import android.content.Context;
 import android.graphics.Color;
@@ -14,6 +11,9 @@ import android.view.ViewGroup;
 import android.view.ViewGroup.LayoutParams;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+
+import java.util.ArrayList;
+import java.util.Collections;
 
 
 
