@@ -49,7 +49,11 @@
         	 android:textColor="@color/white"
         	 android:text="@string/addNewItem"  
     	    />
+
+
     	
     	</LinearLayout>
+
+
   
    </FrameLayout>

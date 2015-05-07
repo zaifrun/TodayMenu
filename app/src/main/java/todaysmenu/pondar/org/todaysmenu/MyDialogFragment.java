@@ -17,6 +17,8 @@ public class MyDialogFragment extends DialogFragment {
 	}
 
 
+
+
 	@Override
 	public Dialog onCreateDialog(Bundle savedBundle) {
 
