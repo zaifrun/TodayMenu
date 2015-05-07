@@ -17,16 +17,18 @@
     <TextView
         android:layout_width="wrap_content"
         android:text="Adding input to choices"
+        android:layout_gravity="center"
         android:layout_height="wrap_content" />
 
     <android.support.wearable.view.DelayedConfirmationView
         android:id="@+id/delayed_confirm"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
+        android:layout_width="60dp"
+        android:layout_height="60dp"
         android:src="@drawable/circle"
+        android:layout_gravity="center"
         app:circle_border_color="@color/blue"
-        app:circle_border_width="4dp"
-        app:circle_radius="16dp">
+        app:circle_border_width="6dp"
+        app:circle_radius="32dp">
     </android.support.wearable.view.DelayedConfirmationView>
 
 </LinearLayout>
