@@ -17,6 +17,7 @@ public class MyDialog  extends DialogFragment implements DelayedConfirmationView
 
     DelayedConfirmationView delayedView;
     String input = "";
+    static boolean selected = false;
 
 
     public static MyDialog newInstance(String input) {
@@ -24,6 +25,7 @@ public class MyDialog  extends DialogFragment implements DelayedConfirmationView
         Bundle args = new Bundle();
         args.putString("input", input);
         frag.setArguments(args);
+        selected = false;
         return frag;
     }
 
@@ -32,9 +34,10 @@ public class MyDialog  extends DialogFragment implements DelayedConfirmationView
 
     @Override
     public void onTimerFinished(View view) {
-        MenuFragment frag = ((SampleGridPagerAdapter) MainActivity.getPager().getAdapter()).getMenuFragment();
-        //add data to the Wearablelistview
-        frag.addData(input);
+        if (!selected) {
+            MenuFragment frag = ((SampleGridPagerAdapter) MainActivity.getPager().getAdapter()).getMenuFragment();
+            frag.addData(input);
+        }
        // frag.addData(textInput);
         dismiss();
     }
@@ -43,8 +46,10 @@ public class MyDialog  extends DialogFragment implements DelayedConfirmationView
     public void onTimerSelected(View view) {
         // User canceled, abort the action
         //do nothing - just exit dialog
-        Toast toast = Toast.makeText(getActivity().getApplicationContext(),"timer selected",Toast.LENGTH_LONG);
-        toast.show();;
+
+      /*  Toast toast = Toast.makeText(getActivity().getApplicationContext(),"timer selected",Toast.LENGTH_LONG);
+        toast.show(); */
+        selected = true;
         dismiss();
     }
     @Override
