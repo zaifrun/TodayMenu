@@ -68,7 +68,7 @@ public class StatsFragment extends Fragment {
     		String p = String.format("%.1f", item.getPercent());
     		text.setText(item.getName() + " : "+item.getFreq()+ " ("+p+" %)");
     		text.setTextColor(Color.WHITE);
-    		text.setTextSize(18);
+    		text.setTextSize(22);
     		text.setLayoutParams(new LayoutParams(
     		        LayoutParams.WRAP_CONTENT,
     		        LayoutParams.WRAP_CONTENT));
