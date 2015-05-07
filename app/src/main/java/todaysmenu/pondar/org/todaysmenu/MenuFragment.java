@@ -58,8 +58,7 @@ public class MenuFragment extends Fragment implements WearableListView.ClickList
     }
 
     //reset our list of choices.
-    public void resetList()
-    { 
+    public void resetList() {
     	int len = Choices.ELEMENTS_RESET.length;
     	String[] newElements = new String[len];
         //copy our original choices to elements
@@ -145,7 +144,8 @@ public class MenuFragment extends Fragment implements WearableListView.ClickList
  	    // Return the size of your dataset
  	    @Override
  	    public int getItemCount() {
- 	        return mDataset.length;
+
+			return mDataset.length;
  	    }
  	}
  	

@@ -27,7 +27,7 @@ public class SpeechFragment extends Fragment implements OnClickListener {
     //just a number, so we can use this as the request code for the activity.
 	final int SPEECH_CODE = 1;
 	TextView textView;
-	String textInput = "";
+	String textInput = ""; //default input - nothing to start with
 
     /*
     * This method is called when the speech recognizer is done.
@@ -38,7 +38,7 @@ public class SpeechFragment extends Fragment implements OnClickListener {
 	    if (requestCode == SPEECH_CODE && resultCode == Activity.RESULT_OK) {
 	        List<String> results = data.getStringArrayListExtra(
 	                RecognizerIntent.EXTRA_RESULTS);
-	        String spokenText = results.get(0);
+	        String spokenText = results.get(0); //we just want the first word, nothing else!!
 	        // Do something with spokenText - format it, just be sure we
             //have the first character as uppercase and the rest as lowercase.
 	 		textInput = spokenText.substring(0,1).toUpperCase() + spokenText.substring(1).toLowerCase();

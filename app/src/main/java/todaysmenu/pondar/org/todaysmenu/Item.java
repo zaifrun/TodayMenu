@@ -10,8 +10,7 @@ public class Item implements Comparable<Item> {
 	private int total;
 	private float percent;
 	
-	public Item(String name, int freq, int total)
-	{
+	public Item(String name, int freq, int total) {
 		this.name = name;
 		this.freq = freq;
 		this.total = total;

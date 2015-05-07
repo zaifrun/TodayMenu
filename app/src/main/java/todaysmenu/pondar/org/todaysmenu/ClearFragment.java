@@ -51,10 +51,10 @@ public class ClearFragment extends Fragment implements OnClickListener {
 				}
 			};
 			Bundle bundle = new Bundle();
-			bundle.putString("title","Delete Stats");
-			bundle.putString("message","Sure?");
+			bundle.putString("title",getResources().getString(R.string.deleteStatsTitle));
+			bundle.putString("message",getResources().getString(R.string.deleteStatsMessage));
 			dialog.setArguments(bundle);
-			dialog.show(this.getFragmentManager(),"test");
+			dialog.show(this.getFragmentManager(),"test"); //test is just a tag - not shown to the user
 		}
 		else if (v.getId()==R.id.clearChoicesButton)
             //reset choices to the default ones
@@ -62,8 +62,7 @@ public class ClearFragment extends Fragment implements OnClickListener {
 		
 	}
 	
-	public void clearData()
-	{
+	public void clearData() {
 		//Clear the database
 		Database db = new Database(getActivity());
     	db.clearData();
@@ -81,8 +80,7 @@ public class ClearFragment extends Fragment implements OnClickListener {
 
     }
 
-	public void clearChoices()
-	{
+	public void clearChoices() {
 		//Clear the database
 		Database db = new Database(getActivity());
     	db.clearChoices();

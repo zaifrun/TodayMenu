@@ -47,8 +47,7 @@ public class StatsFragment extends Fragment {
 
 
     //This method will update the UI by reading from the database and creating the stats view
-    public void updateUI()
-    {
+    public void updateUI() {
     	Database db = new Database(context);
     	ArrayList<Item> items = db.getStats();
     	Collections.sort(items); //items are now sorted according to the frequency
@@ -61,8 +60,7 @@ public class StatsFragment extends Fragment {
     	}
 
         //go through all the items and add them as individually text view.
-    	for (Item item : items)
-    	{
+    	for (Item item : items) {
     		TextView text = new TextView(getActivity());
     		
     		String p = String.format("%.1f", item.getPercent());

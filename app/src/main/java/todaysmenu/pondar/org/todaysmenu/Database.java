@@ -26,8 +26,8 @@ public class Database extends SQLiteOpenHelper {
 		super(context, name, factory, version);
 	}
 	
-	public Database(Context context)
-	{
+	public Database(Context context) {
+
 		super(context,DATABASE,null,VERSION);
 	}
 
@@ -51,8 +51,7 @@ public class Database extends SQLiteOpenHelper {
     /*
      * Reading the user-defined choices from the database
      */
-	public String[] readChoices()
-	{
+	public String[] readChoices() {
 	
 		SQLiteDatabase database = getReadableDatabase();
 		Cursor cursor = database.rawQuery("SELECT name FROM choices ORDER BY id",null);
@@ -67,6 +66,7 @@ public class Database extends SQLiteOpenHelper {
             //make a copy of our choices for use in the UI
             Choices.ELEMENTS = new String[Choices.ELEMENTS_RESET.length];
             System.arraycopy(Choices.ELEMENTS_RESET, 0, Choices.ELEMENTS, 0, Choices.ELEMENTS_RESET.length);
+			cursor.close();
 			return Choices.ELEMENTS_RESET; //we just have default values.
 		}
 		else
@@ -80,6 +80,7 @@ public class Database extends SQLiteOpenHelper {
 				index++;
 			}
 			Choices.ELEMENTS = elements; 	//overwrite the elements array
+			cursor.close();
             return elements;
         }
 
@@ -97,32 +98,28 @@ public class Database extends SQLiteOpenHelper {
 	}
 
     //clear all menu data
-	public void clearData()
-	{
+	public void clearData() {
 		SQLiteDatabase db = getWritableDatabase();
 		db.execSQL("DELETE FROM menu"); //clear all
 		db.close();
 	}
 
     //clear all extra added choices from the database
-	public void clearChoices()
-	{
+	public void clearChoices() {
 		SQLiteDatabase db = getWritableDatabase();
 		db.execSQL("DELETE FROM choices");
 		db.close();
 	}
 
     //This gets all the starts from the database as an arraylist.
-	public ArrayList<Item> getStats()
-	{
+	public ArrayList<Item> getStats() {
 		ArrayList<Item> stats = new ArrayList<Item>();
 		SQLiteDatabase database = getReadableDatabase();
 		Cursor cursor = database.rawQuery("SELECT name,weekday FROM menu ORDER BY name",null);
 		int total = 0; 
 		HashMap<String, Integer> map = new HashMap<String, Integer>();
         //simple loop for calculating the frequencies of an item.
-		while (cursor.moveToNext())
-		{ 
+		while (cursor.moveToNext()) {
 			total++;
 			String name = cursor.getString(0);
 			if (map.containsKey(name)) //update frequency
@@ -134,11 +131,10 @@ public class Database extends SQLiteOpenHelper {
 			{
 				map.put(name, 1);
 			}
-			int day = cursor.getInt(1);						
+			int day = cursor.getInt(1);	//not yet used for anything
 		}
 		System.out.println("TOTAL ROWS = "+total);
-		for (Map.Entry<String, Integer> entry : map.entrySet())
-		{
+		for (Map.Entry<String, Integer> entry : map.entrySet()) {
 			stats.add(new Item(entry.getKey(), entry.getValue(), total));
 		}
 		cursor.close();

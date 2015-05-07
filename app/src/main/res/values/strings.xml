@@ -13,5 +13,11 @@
     <string name="resetChoices">Reset Choices</string>
     <string name="choicesDeleted">Choices Reset</string>
     <string name="choiceAdded">Choice Added</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="title">Confirmation </string>
+    <string name="message">Are you sure? </string>
+    <string name="deleteStatsTitle">Delete Stats</string>
+    <string name="deleteStatsMessage">Sure?</string>
 
 </resources>

@@ -7,8 +7,9 @@ import android.content.DialogInterface;
 import android.os.Bundle;
 
 public class MyDialogFragment extends DialogFragment {
-	String title = "Confirmation";
-	String messsage = "Are you sure";
+
+	//default values
+
 
 	public MyDialogFragment()
 	{
@@ -20,12 +21,11 @@ public class MyDialogFragment extends DialogFragment {
 	public Dialog onCreateDialog(Bundle savedBundle) {
 
 		//Here we create a new dialogbuilder;
-		System.out.println("Creating dialog");
 		AlertDialog.Builder alert = new AlertDialog.Builder(
 				getActivity());
 		Bundle bundle = getArguments();
-		alert.setTitle("Confirmation");
-		alert.setMessage("Are you sure?");
+		alert.setTitle(getResources().getString(R.string.title));
+		alert.setMessage(getResources().getString(R.string.message));
 		if (bundle!=null)
 		{
 			String confirmation = bundle.getString("title");
@@ -37,8 +37,8 @@ public class MyDialogFragment extends DialogFragment {
 		}
 
 
-	    alert.setPositiveButton("Yes", pListener);
-		alert.setNegativeButton("No", nListener);
+	    alert.setPositiveButton(getResources().getString(R.string.yes), pListener);
+		alert.setNegativeButton(getResources().getString(R.string.no), nListener);
 
 		return alert.create();
 	}
