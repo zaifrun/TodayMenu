@@ -8,7 +8,6 @@ import android.os.Bundle;
 
 public class MyDialogFragment extends DialogFragment {
 
-	//default values
 
 
 	public MyDialogFragment()
@@ -26,6 +25,7 @@ public class MyDialogFragment extends DialogFragment {
 		AlertDialog.Builder alert = new AlertDialog.Builder(
 				getActivity());
 		Bundle bundle = getArguments();
+		//default values if nothing passed in the bundle
 		alert.setTitle(getResources().getString(R.string.title));
 		alert.setMessage(getResources().getString(R.string.message));
 		if (bundle!=null)

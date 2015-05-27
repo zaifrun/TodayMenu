@@ -57,6 +57,7 @@ public class Database extends SQLiteOpenHelper {
 		Cursor cursor = database.rawQuery("SELECT name FROM choices ORDER BY id",null);
 		//first test if there is anything in the choices table
 		int count = cursor.getCount();
+
 		if (count==0) //there is nothing, so first time we start the app.
 		{
 			//if empty then put all elements from constants into database there

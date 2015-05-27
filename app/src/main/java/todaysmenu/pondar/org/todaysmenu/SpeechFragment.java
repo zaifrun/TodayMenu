@@ -2,18 +2,14 @@
 package todaysmenu.pondar.org.todaysmenu;
 
 import android.app.Activity;
-import android.app.FragmentTransaction;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
 import android.speech.RecognizerIntent;
 import android.support.wearable.activity.ConfirmationActivity;
-import android.support.wearable.view.DelayedConfirmationView;
-import android.support.wearable.view.DelayedConfirmationView.DelayedConfirmationListener;
 import android.view.View.OnClickListener;
 import android.view.LayoutInflater;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
@@ -54,24 +50,6 @@ public class SpeechFragment extends Fragment implements OnClickListener {
 	    super.onActivityResult(requestCode, resultCode, data);
 	}
 
-
-	void showDialog() {
-
-		// DialogFragment.show() will take care of adding the fragment
-		// in a transaction.  We also want to remove any currently showing
-		// dialog, so make our own transaction and take care of that here.
-		FragmentTransaction ft = getFragmentManager().beginTransaction();
-		Fragment prev = getFragmentManager().findFragmentByTag("dialog");
-		if (prev != null) {
-			ft.remove(prev);
-		}
-		ft.addToBackStack(null);
-
-		// Create and show the dialog.
-		MyDialog newFragment = MyDialog.newInstance(textInput);
-		newFragment.show(ft, "dialog");
-	}
-
     /*
      * Called when the users presses the button to save the input to our menu of choices.
      *
@@ -79,15 +57,14 @@ public class SpeechFragment extends Fragment implements OnClickListener {
 	public void addData() {
 
         //First show a confirmation screen to the user.
-		/*Intent intent = new Intent(getActivity(), ConfirmationActivity.class);
+		Intent intent = new Intent(getActivity(), ConfirmationActivity.class);
  		intent.putExtra(ConfirmationActivity.EXTRA_ANIMATION_TYPE,
  		                ConfirmationActivity.SUCCESS_ANIMATION);
  		intent.putExtra(ConfirmationActivity.EXTRA_MESSAGE,getResources().getString(R.string.choiceAdded));
- 		startActivity(intent);*/
+ 		startActivity(intent);
  		//notify adapter of changes
-
-		//show dialog here - pass the textInput value to the dialog
-		showDialog();
+		MenuFragment frag = ((SampleGridPagerAdapter) MainActivity.getPager().getAdapter()).getMenuFragment();
+		frag.addData(textInput);
 	}
 
 

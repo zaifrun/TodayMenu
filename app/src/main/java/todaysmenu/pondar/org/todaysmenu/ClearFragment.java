@@ -53,6 +53,7 @@ public class ClearFragment extends Fragment implements OnClickListener {
 			Bundle bundle = new Bundle();
 			bundle.putString("title",getResources().getString(R.string.deleteStatsTitle));
 			bundle.putString("message",getResources().getString(R.string.deleteStatsMessage));
+			//passing arguments to our dialog instead of the default values
 			dialog.setArguments(bundle);
 			dialog.show(this.getFragmentManager(),"test"); //test is just a tag - not shown to the user
 		}
