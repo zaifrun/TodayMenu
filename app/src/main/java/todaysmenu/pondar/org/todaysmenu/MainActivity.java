@@ -52,7 +52,8 @@ public class MainActivity extends Activity
 	        });
             //create a new adapter
 	        pager.setAdapter(new SampleGridPagerAdapter(this, getFragmentManager()));
-	        pagerGlobal = pager;
+	       //this is used for future reference.
+			pagerGlobal = pager;
             //setup our DotsPageIndicator to use this pagerAdapter
 	        DotsPageIndicator dotsPageIndicator = (DotsPageIndicator) findViewById(R.id.page_indicator);
 	        dotsPageIndicator.setPager(pager);

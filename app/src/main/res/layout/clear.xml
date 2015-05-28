@@ -16,7 +16,8 @@
             android:layout_width="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center" >
-<!--
+		<!-- normal android version commented out below -->
+		<!--
     	<Button
     	     android:id="@+id/clearDataButton"
     	 	 android:layout_height="wrap_content"

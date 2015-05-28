@@ -5,8 +5,6 @@
    and some text next to the circle.
    Notice this is a custom view specified in the WearableListItemLayout class
  -->
-
-
 <todaysmenu.pondar.org.todaysmenu.WearableListItemLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_gravity="center_horizontal"

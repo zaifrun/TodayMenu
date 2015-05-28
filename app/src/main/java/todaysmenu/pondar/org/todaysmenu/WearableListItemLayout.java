@@ -21,9 +21,12 @@ public class WearableListItemLayout extends LinearLayout
 
 	private ImageView mCircle;
 	private TextView mName;
-	
+
+	//color for the faded text
 	private final float mFadedTextAlpha;
+	//color for the circle not chosen
 	private final int mFadedCircleColor;
+	//color for the chosen circle in the listview
 	private final int mChosenCircleColor;
 	
 	public WearableListItemLayout(Context context) {
@@ -34,6 +37,7 @@ public class WearableListItemLayout extends LinearLayout
 		this(context, attrs, 0);
 	}
 	
+	//initializing colors
 	public WearableListItemLayout(Context context, AttributeSet attrs,
 	                     int defStyle) {
 		super(context, attrs, defStyle);
@@ -44,6 +48,7 @@ public class WearableListItemLayout extends LinearLayout
 	}
 	
 	// Get references to the icon and text in the item layout definition
+	// that we will use for later.
 	@Override
 	protected void onFinishInflate() {
 		super.onFinishInflate();

@@ -122,6 +122,7 @@ public class MenuFragment extends Fragment implements WearableListView.ClickList
  	    public WearableListView.ViewHolder onCreateViewHolder(ViewGroup parent,
  	                                                          int viewType) {
  	        // Inflate our custom layout for list items
+			// see the layout file list_item.xml for details
  	        return new ItemViewHolder(mInflater.inflate(R.layout.list_item, null));
  	    }
 

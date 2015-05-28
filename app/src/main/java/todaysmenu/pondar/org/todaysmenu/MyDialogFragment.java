@@ -73,6 +73,7 @@ public class MyDialogFragment extends DialogFragment {
 	{
 		
 	}
+
 	protected void negativeClick()
 	{
 		

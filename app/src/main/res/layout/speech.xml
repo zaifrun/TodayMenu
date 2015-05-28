@@ -50,10 +50,5 @@
         	 android:text="@string/addNewItem"  
     	    />
 
-
-    	
     	</LinearLayout>
-
-
-  
    </FrameLayout>
