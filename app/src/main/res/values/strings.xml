@@ -13,6 +13,8 @@
     <string name="resetChoices">Reset Choices</string>
     <string name="choicesDeleted">Choices Reset</string>
     <string name="choiceAdded">Choice Added</string>
+    <string name="choicesReset">Choices reset</string>
+    <string name="statsReset">Stats reset</string>
     <string name="yes">Yes</string>
     <string name="no">No</string>
     <string name="title">Confirmation </string>

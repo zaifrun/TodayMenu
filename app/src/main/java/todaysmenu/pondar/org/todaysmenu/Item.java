@@ -29,7 +29,7 @@ public class Item implements Comparable<Item> {
 	public int getTotal()
 	{
 		return total;
-	}
+	} //not actually used yet
 	
 	public int getFreq() {
 		return freq;

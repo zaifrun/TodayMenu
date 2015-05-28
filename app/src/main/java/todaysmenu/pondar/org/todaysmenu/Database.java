@@ -72,7 +72,7 @@ public class Database extends SQLiteOpenHelper {
 		}
 		else
 		{
-			//if not empty, then read the extra choices from the table and redefine the elements
+			//if not empty, then read all choices from the table and redefine the elements
 			String[] elements = new String[count];
 			int index = 0;
 			while (cursor.moveToNext())

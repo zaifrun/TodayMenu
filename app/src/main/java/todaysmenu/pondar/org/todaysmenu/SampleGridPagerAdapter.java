@@ -8,9 +8,12 @@ import android.support.wearable.view.FragmentGridPagerAdapter;
 
 /**
  * Used for navigating between our different fragments.
+ * You need to override the 3 methods with the override annotation below in the code
+ * to tell the watch system which fragments belong where.
  */
 public class SampleGridPagerAdapter extends FragmentGridPagerAdapter {
 
+    //The 4 fragments in this app.
     MenuFragment menuFragment;
     ClearFragment clearFragment;
     StatsFragment statsFragment;
@@ -60,7 +63,7 @@ public class SampleGridPagerAdapter extends FragmentGridPagerAdapter {
  
 
     //get the correct view depending on where we are in the UI
-    //so screen 1 = the menu, screen 2 = stats, screen 3 = speech input, screen 4 = clearing options
+    //so screen 0 = the menu, screen 1 = stats, screen 2 = speech input, screen 3 = clearing options
     @Override
     public Fragment getFragment(int row, int col) {
         if (col==0)

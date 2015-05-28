@@ -36,6 +36,7 @@ public class MainActivity extends Activity
 	                // Adjust page margins:
 	                //   A little extra horizontal spacing between pages looks a bit
 	                //   less crowded on a round display.
+					// following lines are from Google.
 	                final boolean round = insets.isRound();
 	                int rowMargin = res.getDimensionPixelOffset(R.dimen.page_row_margin);
 	                int colMargin = res.getDimensionPixelOffset(round ?
