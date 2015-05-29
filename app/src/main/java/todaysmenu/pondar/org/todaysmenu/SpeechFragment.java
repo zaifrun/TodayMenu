@@ -36,7 +36,8 @@ public class SpeechFragment extends Fragment implements OnClickListener {
 	@Override
 	public void onActivityResult(int requestCode, int resultCode,
 	        Intent data) {
-	    if (requestCode == SPEECH_CODE && resultCode == Activity.RESULT_OK) {
+		super.onActivityResult(requestCode, resultCode, data);
+		if (requestCode == SPEECH_CODE && resultCode == Activity.RESULT_OK) {
 	        List<String> results = data.getStringArrayListExtra(
 	                RecognizerIntent.EXTRA_RESULTS);
 	        String spokenText = results.get(0); //we just want the first word, nothing else!!
@@ -47,7 +48,6 @@ public class SpeechFragment extends Fragment implements OnClickListener {
 	 		textView.setText("Speech Input: "+textInput);
 
 	    }
-	    super.onActivityResult(requestCode, resultCode, data);
 	}
 
     /*
@@ -96,8 +96,14 @@ public class SpeechFragment extends Fragment implements OnClickListener {
     // Our onclick listener.
 	@Override
 	public void onClick(View v) {
-		if (v.getId()==R.id.speechButton)	
+		if (v.getId()==R.id.speechButton) {
 			displaySpeechRecognizer();
+			//notice that on the emulator, the button
+			//is actually still in the pressed state
+			//after displaying the speech recognizer
+			//this I have not seen on real hardware, must
+			//be a bug.
+		}
 		else if (v.getId()==R.id.addItemButton) {
 			//first check if we have some input
 			if (textInput.length()>0)

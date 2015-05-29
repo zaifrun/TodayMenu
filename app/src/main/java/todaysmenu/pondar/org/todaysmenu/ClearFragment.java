@@ -62,7 +62,8 @@ public class ClearFragment extends Fragment implements OnClickListener {
 			clearChoices();
 		
 	}
-	
+
+	//will clear all the lunch statistics
 	public void clearData() {
 		//Clear the database
 		Database db = new Database(getActivity());
@@ -81,6 +82,7 @@ public class ClearFragment extends Fragment implements OnClickListener {
 
     }
 
+	//Will clear any user added choices and reset to default list.
 	public void clearChoices() {
 		//Clear the database
 		Database db = new Database(getActivity());

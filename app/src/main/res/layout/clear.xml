@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 
 <!-- the UI for the clear activity, where the user can clear data from the database.
-  It's very simple here - just two buttons.-->
+  It's very simple here - just two buttons.
+  The buttons were created using a great online tool:
+  http://angrytools.com/android/button/ -->
 
 <FrameLayout
         xmlns:android="http://schemas.android.com/apk/res/android" 
