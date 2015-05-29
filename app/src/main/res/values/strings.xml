@@ -21,5 +21,6 @@
     <string name="message">Are you sure? </string>
     <string name="deleteStatsTitle">Delete Stats</string>
     <string name="deleteStatsMessage">Sure?</string>
+    <string name="deleteChoices">Delete choices?</string>
 
 </resources>

@@ -1,6 +1,7 @@
 
 package todaysmenu.pondar.org.todaysmenu;
 
+import android.app.DialogFragment;
 import android.app.Fragment;
 import android.content.Intent;
 import android.os.Bundle;
@@ -57,9 +58,13 @@ public class ClearFragment extends Fragment implements OnClickListener {
 			dialog.setArguments(bundle);
 			dialog.show(this.getFragmentManager(),"test"); //test is just a tag - not shown to the user
 		}
-		else if (v.getId()==R.id.clearChoicesButton)
-            //reset choices to the default ones
-			clearChoices();
+		else if (v.getId()==R.id.clearChoicesButton) {
+			DialogFragment newFragment = MyWearDialog.newInstance();
+			newFragment.show(getFragmentManager(), "dialog");
+
+			//reset choices to the default ones
+			//clearChoices();
+		}
 		
 	}
 
@@ -82,23 +87,7 @@ public class ClearFragment extends Fragment implements OnClickListener {
 
     }
 
-	//Will clear any user added choices and reset to default list.
-	public void clearChoices() {
-		//Clear the database
-		Database db = new Database(getActivity());
-    	db.clearChoices();
-    	db.close();
-    	//notify adapter of changes
- 		((SampleGridPagerAdapter)MainActivity.getPager().getAdapter()).listViewDataSetChanged();
 
-    	//starting confirmation intent to show to the user.
-    	Intent intent = new Intent(getActivity(), ConfirmationActivity.class);
- 		intent.putExtra(ConfirmationActivity.EXTRA_ANIMATION_TYPE,
- 		                ConfirmationActivity.SUCCESS_ANIMATION);
- 		intent.putExtra(ConfirmationActivity.EXTRA_MESSAGE,getResources().getString(R.string.choicesDeleted));
- 		startActivity(intent);
- 	
-	}
     
     
     
