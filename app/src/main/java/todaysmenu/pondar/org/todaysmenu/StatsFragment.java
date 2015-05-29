@@ -39,6 +39,7 @@ public class StatsFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
             Bundle savedInstanceState) {
     	View view = inflater.inflate(R.layout.stats, container, false);
+		//need the root view for later
     	parent = (LinearLayout) view.findViewById(R.id.statslayout);
     	updateUI(); //make sure the UI is updated when the fragment is shown.
     	
