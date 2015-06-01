@@ -1,7 +1,6 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="todaysmenu.pondar.org.todaysmenu"
-    android:versionCode="1"
-    android:versionName="1.0">
+    >
 
     <!-- we need a watch! -->
     <uses-feature android:name="android.hardware.type.watch" />
