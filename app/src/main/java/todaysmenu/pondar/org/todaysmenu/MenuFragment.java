@@ -15,11 +15,12 @@ import android.widget.TextView;
 
 
 /*
-    This class represents the fragment where we will select an item .
+    This class represents the fragment where we will select an item.
+    It listens for clicks on the wearableListView
  */
 public class MenuFragment extends Fragment implements WearableListView.ClickListener {
 	
-	WearableListView listView;
+	private WearableListView listView;
 	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
@@ -35,6 +36,7 @@ public class MenuFragment extends Fragment implements WearableListView.ClickList
 				
 			// Set a click listener - using this activity
 			listView.setClickListener(this);
+			//this solves a problem on some watches with touch
 			listView.setGreedyTouchMode(true);
 		}
     	return view;
@@ -93,7 +95,8 @@ public class MenuFragment extends Fragment implements WearableListView.ClickList
  	@Override
  	public void onTopEmptyRegionClick() {
  	}
- 	
+
+	//This is the adapter we use
  	private static final class Adapter extends WearableListView.Adapter {
  	    private String[] mDataset;
  	    private final Context mContext;

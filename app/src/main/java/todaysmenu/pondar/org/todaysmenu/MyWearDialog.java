@@ -7,11 +7,11 @@ import android.support.wearable.activity.ConfirmationActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 /**
  * Created by Martin on 29-05-2015.
- */
+ *
+* This is the dialog for the custom dialog */
 public class MyWearDialog  extends DialogFragment implements View.OnClickListener {
         static MyWearDialog newInstance() {
             return new MyWearDialog();
@@ -54,8 +54,6 @@ public class MyWearDialog  extends DialogFragment implements View.OnClickListene
             button.setOnClickListener(this);
             button = (View) view.findViewById(R.id.ok_btn);
             button.setOnClickListener(this);
-           // View tv = v.findViewById(R.id.text);
-            // ((TextView)tv).setText("This is an instance of MyDialogFragment");
             return view;
         }
 }

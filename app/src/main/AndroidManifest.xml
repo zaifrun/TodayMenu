@@ -17,12 +17,12 @@
         <activity
             android:name="android.support.wearable.activity.ConfirmationActivity">
         </activity>
+        <!-- This is our main activity -->
         <activity
             android:name="todaysmenu.pondar.org.todaysmenu.MainActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

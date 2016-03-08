@@ -14,16 +14,16 @@ import android.widget.Button;
 
 
 /**
- * This class is our fragment for the clear screen (where you can clear the
- * stats and reset the choices in the database
+ * This class is our fragment for the clear screen
+ * (where you can clear the
+ * stats and reset the choices in the database)
  */
 public class ClearFragment extends Fragment implements OnClickListener {
 
-
-	
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
-            Bundle savedInstanceState) {
+            Bundle savedInstanceState)
+	{
     	View view = inflater.inflate(R.layout.clear, container, false);
 
         //we set our click listeners for the buttons
@@ -35,22 +35,24 @@ public class ClearFragment extends Fragment implements OnClickListener {
     	return view;
     }
 
+	//Here we have the click listeners.
 	@Override
 	public void onClick(View v) {
 		if (v.getId()==R.id.clearDataButton) {
 			//clear all stats data
 			MyDialogFragment dialog = new MyDialogFragment() {
 				@Override
-				protected void positiveClick() {
+				protected void positiveClick() { //override the positive button
 					super.positiveClick();
-					clearData();
+					clearData(); //clear all the data
 				}
 
 				@Override
 				protected void negativeClick() {
-					super.negativeClick();
+					super.negativeClick(); // on negative - just do nothing.
 				}
 			};
+			//passing parameters to the dialog with a bundle
 			Bundle bundle = new Bundle();
 			bundle.putString("title",getResources().getString(R.string.deleteStatsTitle));
 			bundle.putString("message",getResources().getString(R.string.deleteStatsMessage));
@@ -61,9 +63,6 @@ public class ClearFragment extends Fragment implements OnClickListener {
 		else if (v.getId()==R.id.clearChoicesButton) {
 			DialogFragment newFragment = MyWearDialog.newInstance();
 			newFragment.show(getFragmentManager(), "dialog");
-
-			//reset choices to the default ones
-			//clearChoices();
 		}
 		
 	}

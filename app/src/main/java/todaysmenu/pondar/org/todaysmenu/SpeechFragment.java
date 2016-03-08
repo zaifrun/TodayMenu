@@ -26,9 +26,9 @@ import java.util.List;
 public class SpeechFragment extends Fragment implements OnClickListener {
 
     //just a number, so we can use this as the request code for the activity.
-	final int SPEECH_CODE = 1;
-	TextView textView;
-	String textInput = ""; //default input - nothing to start with
+	private final int SPEECH_CODE = 1;
+	private TextView textView;
+	private String textInput = ""; //default input - nothing to start with
 
     /*
     * This method is called when the speech recognizer is done.
@@ -69,13 +69,13 @@ public class SpeechFragment extends Fragment implements OnClickListener {
 
 
 
-    //method for starting the speech recognizer by using an Intent.
+	//method for starting the speech recognizer by using an Intent.
 	private void displaySpeechRecognizer() {
-	    Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
-	    intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
-	            RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
-	// Start the activity, the intent will be populated with the speech text
-	    startActivityForResult(intent, SPEECH_CODE);
+		Intent intent = new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);
+		intent.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,
+				RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);
+		// Start the activity, the intent will be populated with the speech text
+		startActivityForResult(intent, SPEECH_CODE);
 	}
 
     //setting up our listeners for the view.

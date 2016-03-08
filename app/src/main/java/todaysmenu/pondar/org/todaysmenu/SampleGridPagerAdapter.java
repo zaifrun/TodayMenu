@@ -5,7 +5,6 @@ import android.app.FragmentManager;
 import android.content.Context;
 import android.support.wearable.view.FragmentGridPagerAdapter;
 
-
 /**
  * Used for navigating between our different fragments.
  * You need to override the 3 methods with the override annotation below in the code

@@ -6,6 +6,8 @@ import android.app.DialogFragment;
 import android.content.DialogInterface;
 import android.os.Bundle;
 
+
+/* Building a Dialog using AlertDialog - kind of standard android dialog */
 public class MyDialogFragment extends DialogFragment {
 
 
@@ -28,6 +30,8 @@ public class MyDialogFragment extends DialogFragment {
 		//default values if nothing passed in the bundle
 		alert.setTitle(getResources().getString(R.string.title));
 		alert.setMessage(getResources().getString(R.string.message));
+		//if there was something in the bundle, title and message
+		// for the dialog, then use those instead of the default ones.
 		if (bundle!=null)
 		{
 			String confirmation = bundle.getString("title");
